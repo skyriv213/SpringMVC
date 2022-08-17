@@ -119,6 +119,13 @@ public class BasicController {
         return "basic/condition";
     }
 
+    @GetMapping("/comments")
+    public String commenets(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
+
+    }
+
     @Data
     static class User {
         private String username;
