@@ -126,6 +126,23 @@ public class BasicController {
 
     }
 
+    @GetMapping("block")
+    public String block(Model model) {
+        addUsers(model);
+        return "basic/block";
+    }
+
+    @GetMapping("javascript")
+    public String javascript(Model model) {
+
+        model.addAttribute("user",new User("User\"A\"",100));
+
+        addUsers(model);
+
+        return "basic/javascript";
+    }
+
+
     @Data
     static class User {
         private String username;
